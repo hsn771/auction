@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import RegisterForm from '@/components/RegisterForm.vue'
-// import Dashboard from '@/views/Dashboard.vue'
+
 
 const routes =  [
   {
@@ -21,6 +21,25 @@ const routes =  [
     name: "dashboard",
     component: () => import("./components/Dashboard")
   },
+
+  {
+    path: "/category_list",
+    alias: "/category_list",
+    name: "category_list",
+    component: () => import("./components/category/CategoryList"),
+  },
+  {
+    path: "/add_category",
+    alias: "/add_category",
+    name: "add_category",
+    component: () => import("./components/category/CategoryCreate"),
+  },
+  {
+    path: "/edit_category/:id",
+    name: "edit_category",
+    component: () => import("./components/category/CategoryEdit"),
+  },
+
 ];
 
 const router = createRouter({

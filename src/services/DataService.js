@@ -7,11 +7,30 @@ class DataService {
    register(data) {
     return http.post("/register", data);
   }
-  BatchEnroll(uid) {
-    return http.get(`/batchEnroll?student_id=${uid}`);
+  CategoryList() {
+    return http.get(`/categories`);
   }
-  batcheDetail(bid) {
-    return http.get(`/course_details/${bid}`);
+  // SingleUnit(id) {
+  //   return http.get(`/units/${id}`);
+  // }
+  getCategories() {
+    return http.get("/categories");
+  }
+
+  getCategory(id) {
+    return http.get(`/categories/${id}`);
+  }
+
+  addCategory(data) {
+    return http.post("/categories", data);
+  }
+
+  updateCategory(id, data) {
+    return http.put(`/categories/${id}`, data);
+  }
+
+  deleteCategory(id) {
+    return http.delete(`/categories/${id}`);
   }
 }
 
