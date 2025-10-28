@@ -1,36 +1,37 @@
 import { createWebHistory, createRouter } from "vue-router";
-import RegisterForm from '@/components/RegisterForm.vue'
+import RegisterForm from "@/components/RegisterForm.vue";
 
-
-const routes =  [
+const routes = [
+  // 🔹 Auth Routes
   {
     path: "/",
     alias: "/login",
     name: "login",
-    component: () => import("./components/LoginForm")
+    component: () => import("./components/LoginForm"),
   },
   {
-    path: '/register',
-    name: 'register',
+    path: "/register",
+    name: "register",
     component: RegisterForm,
-    meta: { layout: 'auth' }
+    meta: { layout: "auth" },
   },
+
+  // 🔹 Dashboard
   {
     path: "/dashboard",
     alias: "/dashboard",
     name: "dashboard",
-    component: () => import("./components/Dashboard")
+    component: () => import("./components/Dashboard"),
   },
 
+  // 🔹 Category Routes
   {
     path: "/category_list",
-    alias: "/category_list",
     name: "category_list",
     component: () => import("./components/category/CategoryList"),
   },
   {
     path: "/add_category",
-    alias: "/add_category",
     name: "add_category",
     component: () => import("./components/category/CategoryCreate"),
   },
@@ -38,8 +39,26 @@ const routes =  [
     path: "/edit_category/:id",
     name: "edit_category",
     component: () => import("./components/category/CategoryEdit"),
+    props: true,
   },
 
+  // 🔹 Auction Routes
+  {
+    path: "/auction_list",
+    name: "auction_list",
+    component: () => import("./components/auction/AuctionList"),
+  },
+  {
+    path: "/add_auction",
+    name: "add_auction",
+    component: () => import("./components/auction/AuctionCreate"),
+  },
+  {
+    path: "/auctions/edit/:id",
+    name: "edit_auction",
+    component: () => import("./components/auction/AuctionEdit"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
