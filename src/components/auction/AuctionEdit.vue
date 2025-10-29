@@ -118,12 +118,10 @@ export default {
     return {
       categories: [],
       auction: {
-        seller_id: "",
         category_id: "",
         title: "",
         description: "",
         starting_price: "",
-        current_price: "",
         image: "",
         status: "pending",
       },
@@ -153,7 +151,7 @@ export default {
       const id = this.$route.params.id;
       DataService.getAuction(id)
         .then((response) => {
-          this.auction = response.data.data;
+          this.auction = response.data;
         })
         .catch((error) => {
           console.error("Error fetching auction:", error);

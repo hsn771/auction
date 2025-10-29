@@ -69,7 +69,7 @@ export default {
       DataService.getCategories()
         .then((response) => {
           // The backend returns { success, message, data }
-          this.categories = response.data.data.data || response.data.data; 
+          this.categories = response.data; 
         })
         .catch((error) => {
           console.error("Error fetching categories:", error);

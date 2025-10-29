@@ -83,12 +83,12 @@
             <!-- Layouts -->
             <li class="menu-item">
               <router-link v-if="uid" :to="'/category_list/'" class="nav-link">
-                          <i class="fas fa-home"></i> Category
+                          <i class="menu-icon tf-icons bx bx-food-menu"></i> Category
               </router-link>
             </li>
             <li class="menu-item">
               <router-link v-if="uid" :to="'/auction_list/'" class="nav-link">
-                          <i class="fas fa-home"></i> Auction Product
+                          <i class="menu-icon tf-icons bx bx-store-alt"></i> Auction Product
               </router-link>
             </li>
           </ul>

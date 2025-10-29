@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <h3><strong>All Auctions</strong></h3>
+    <h3><strong>All Auctions Products</strong></h3>
 
     <router-link to="/add_auction" class="btn btn-primary mb-3">
       Add New Auction
@@ -95,7 +95,7 @@ export default {
       DataService.getAuctions()
         .then((response) => {
           // Backend returns { success, message, data } or paginated data
-          this.auctions = response.data.data.data || response.data.data;
+          this.auctions = response.data;
         })
         .catch((error) => {
           console.error("Error fetching auctions:", error);
