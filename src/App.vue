@@ -91,6 +91,12 @@
                           <i class="menu-icon tf-icons bx bx-store-alt"></i> Auction Product
               </router-link>
             </li>
+            <li class="menu-item">
+              <router-link v-if="uid" :to="'/bid_list/'" class="nav-link">
+                <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i> Bid
+              </router-link>
+            </li>
+
           </ul>
         </aside>
         <!-- / Menu -->

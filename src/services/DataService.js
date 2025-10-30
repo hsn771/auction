@@ -56,6 +56,27 @@ class DataService {
   deleteAuction(id) {
     return http.delete(`/auctions/${id}`);
   }
+
+  // 🔹 Bid APIs
+  getBids() {
+    return http.get("/bids");
+  }
+
+  getBid(id) {
+    return http.get(`/bids/${id}`);
+  }
+
+  addBid(data) {
+    return http.post("/bids", data);
+  }
+
+  updateBid(id, data) {
+    return http.put(`/bids/${id}`, data);
+  }
+
+  deleteBid(id) {
+    return http.delete(`/bids/${id}`);
+  }
 }
 
 export default new DataService();

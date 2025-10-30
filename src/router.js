@@ -59,6 +59,24 @@ const routes = [
     component: () => import("./components/auction/AuctionEdit"),
     props: true,
   },
+
+  // 🔹 Bid Routes
+  {
+    path: "/bid_list",
+    name: "bid_list",
+    component: () => import("./components/bid/BidList"),
+  },
+  {
+    path: "/add_bid",
+    name: "add_bid",
+    component: () => import("./components/bid/BidCreate"),
+  },
+  {
+    path: "/bids/edit/:id",
+    name: "edit_bid",
+    component: () => import("./components/bid/BidEdit"),
+    props: true,
+  },
 ];
 
 const router = createRouter({
